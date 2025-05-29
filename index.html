@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>UnBan Your WhatsApp</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+  <!-- Popup Style -->
+  <style>
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+      z-index: 1000;
+      backdrop-filter: blur(5px);
+    }
+
+    .popup-content {
+      background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+      color: #1a1a1a;
+      padding: 30px;
+      border-radius: 15px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      width: 90%;
+      max-width: 450px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      border: 2px solid rgba(255, 255, 255, 0.5);
+      animation: slideIn 0.5s ease-out;
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translate(-50%, -60%) scale(0.8);
+        opacity: 0;
+      }
+      to {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+      }
+    }
+
+    .popup-content h2 {
+      margin: 0 0 15px;
+      font-size: 1.8em;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .popup-content p {
+      margin: 20px 0;
+      font-size: 1.1em;
+      line-height: 1.5;
+      color: #1a1a1a;
+    }
+
+    .popup-content button {
+      background: #1a1a1a;
+      border: none;
+      padding: 15px 30px;
+      cursor: pointer;
+      font-size: 1em;
+      font-weight: bold;
+      border-radius: 25px;
+      color: #FFD700;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .popup-content button:hover {
+      background: #333;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #1a1a1a;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <!-- WhatsApp Channel Popup -->
+  <div class="popup" id="whatsappPopup">
+    <div class="popup-content">
+      <span class="close-btn" onclick="closePopup()">×</span>
+      <h2>Join WhatsApp Channel</h2>
+      <p>Stay ahead with exclusive updates! Subscribe now and never miss the latest news!</p>
+      <button onclick="window.open('https://whatsapp.com/channel/0029VaVFGy5ISTkS0xRQNW0l', '_blank')">Join Now</button>
+    </div>
+  </div>
+
+  <!-- Your existing content goes here -->
+  <!-- ... -->
+
+  <script>
+    // Function to show the popup after a delay (e.g. 5 seconds)
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        document.getElementById('whatsappPopup').style.display = 'block';
+      }, 5000); // 5000 milliseconds = 5 seconds
+    });
+
+    // Function to close the popup
+    function closePopup() {
+      document.getElementById('whatsappPopup').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
